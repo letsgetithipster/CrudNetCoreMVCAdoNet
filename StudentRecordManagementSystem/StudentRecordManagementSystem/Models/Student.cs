@@ -12,8 +12,9 @@ namespace StudentRecordManagementSystem.Models
         [Display(Name = "Sobrenome")]
         public string LastName { set; get; }
         [Required(ErrorMessage = @"O campo ""Sobrenome"" é necessário.")]
+        [EmailAddress(ErrorMessage = "Email inválido")]
         public string Email { set; get; }
-        [Required(ErrorMessage = @"O campo ""Telefone"" é necessário.")]
+        [Required(ErrorMessage = @"O campo ""Telefone"" é necessário.")]        
         [Display(Name = "Telefone")]
         public string Mobile { set; get; }
         [Display(Name = "Endereço")]
