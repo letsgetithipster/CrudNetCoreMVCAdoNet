@@ -17,7 +17,7 @@ Create table Student(
 
 
 ------------------------------------------------------------------------------
------------------------INSERT-----------------------
+-----------------------POST-----------------------
 
 Create procedure spAddStudent          
 (          
@@ -35,7 +35,7 @@ End
 
 
 ------------------------------------------------------------------------------
------------------------UPDATE-----------------------
+-----------------------PUT-----------------------
 
 Create procedure spUpdateStudent            
 (            
@@ -66,13 +66,13 @@ Create procedure spDeleteStudent
    @Id int            
 )            
 as             
-begin            
+Begin            
    Delete from Student where Id=@Id            
 End  
 
 
 ------------------------------------------------------------------------------
------------------------SELECT-----------------------
+-----------------------GET ALL-----------------------
 
 Create procedure spGetAllStudent        
 as        
@@ -81,3 +81,18 @@ Begin
     from Student     
     order by Id   
 End 
+
+
+------------------------------------------------------------------------------
+-----------------------GET ONE-----------------------
+
+Create procedure spGetStudent
+(
+	@Id int
+)
+as
+Begin
+	select *
+	from Student
+	where Id = @Id
+End

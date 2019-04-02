@@ -81,8 +81,10 @@ namespace StudentRecordManagementSystem.Models
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string sqlQuery = "SELECT * FROM Student WHERE Id= " + id;
-                SqlCommand cmd = new SqlCommand(sqlQuery, con);
+                SqlCommand cmd = new SqlCommand("spGetStudent", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id", id);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
 

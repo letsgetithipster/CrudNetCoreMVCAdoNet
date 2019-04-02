@@ -7,7 +7,7 @@ namespace StudentRecordManagementSystem.Utility
 {
     public static class ConnectionString
     {
-        private static string connectionName = "Data Source=;Initial Catalog=;User ID=;Password=;";
+        private static string connectionName = "Data Source=172.18.32.1;Initial Catalog=CrudCoreAdo;User ID=sa;Password=Dev*2019;";
 
         public static string CName
         {
